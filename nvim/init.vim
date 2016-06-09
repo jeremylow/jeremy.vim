@@ -52,7 +52,7 @@ nnoremap <leader><space> :noh<cr>
 " Faster saving, just use leader + w
 nnoremap <leader>w :w!<cr>
 
-" save on focus lost
+" save on focus lost (this doesn't work)
 " au FocusLost * :wa
 
 nnoremap <F5> :GundoToggle<CR>
@@ -73,7 +73,7 @@ let g:indentLine_leadingSpaceEnabled = 1
 map <S-Right> :tabn<CR>
 map <S-Left> :tabp<CR>
 
-let g:airline_theme='wombat'
+let g:airline_theme='serene'
 set laststatus=2
 
 autocmd Filetype sass setlocal ts=4 sts=4 sw=4
