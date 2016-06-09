@@ -78,7 +78,7 @@ set laststatus=2
 
 autocmd Filetype sass setlocal ts=4 sts=4 sw=4
 
-call plug#begin('plugged')
+call plug#begin('/home/jeremy/coding/jeremy.vim/nvim/plugged')
 Plug 'https://github.com/ervandew/supertab.git'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/sjl/gundo.vim.git', { 'on':  'GundoToggle' }
