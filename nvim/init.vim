@@ -6,7 +6,7 @@ filetype plugin on
 filetype indent on
 
 let mapleader = ","
-
+set mouse-=a
 set wildignore+=*/node_modules/*,*/bower_components/*,*/htmlcov/*,.git
 
 set nowritebackup
@@ -35,6 +35,10 @@ set tabstop=4
 set wrap
 set textwidth=79
 set colorcolumn=85
+
+" Stops vim from inserting line breaks to wrap text
+set textwidth=0
+set wrapmargin=0
 
 nnoremap j gj
 nnoremap k gk
@@ -88,8 +92,13 @@ Plug 'https://github.com/chase/Vim-Jinja2-Syntax.git', { 'for': ['jina', 'jinja2
 Plug 'git@github.com:vim-airline/vim-airline.git'
 Plug 'git@github.com:vim-airline/vim-airline-themes.git'
 Plug 'git@github.com:Yggdroot/indentLine.git'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-scripts/closetag.vim', { 'for': ['html', 'jinja'] }
 call plug#end()
 
+" Plug 'https://github.com/davidhalter/jedi-vim.git'
+" Plug 'https://github.com/davidhalter/jedi-vim.git'
 " Plug 'https://github.com/SirVer/ultisnips.git'
 " Plug 'https://github.com/honza/vim-snippets.git'
 
+autocmd Filetype sass setlocal ts=4 sts=4 sw=4
