@@ -88,7 +88,7 @@ Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/sjl/gundo.vim.git', { 'on':  'GundoToggle' }
 Plug 'git@github.com:rust-lang/rust.vim.git', { 'for': 'rust' }
 Plug 'https://github.com/tpope/vim-haml.git', { 'for': 'sass' }
-Plug 'https://github.com/chase/Vim-Jinja2-Syntax.git', { 'for': ['jina', 'jinja2', 'html'] }
+Plug 'https://github.com/chase/Vim-Jinja2-Syntax.git', { 'for': ['jinja', 'jinja2', 'html'] }
 Plug 'git@github.com:vim-airline/vim-airline.git'
 Plug 'git@github.com:vim-airline/vim-airline-themes.git'
 Plug 'git@github.com:Yggdroot/indentLine.git'
