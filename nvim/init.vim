@@ -94,6 +94,7 @@ Plug 'git@github.com:vim-airline/vim-airline-themes.git'
 Plug 'git@github.com:Yggdroot/indentLine.git'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/closetag.vim', { 'for': ['html', 'jinja'] }
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 " Plug 'https://github.com/davidhalter/jedi-vim.git'
