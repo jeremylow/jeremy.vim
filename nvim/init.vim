@@ -34,7 +34,6 @@ set tabstop=4
 
 set wrap
 set textwidth=79
-set colorcolumn=85
 
 " Stops vim from inserting line breaks to wrap text
 set textwidth=0
@@ -58,6 +57,7 @@ nnoremap <leader>w :w!<cr>
 
 " save on focus lost (this doesn't work)
 " au FocusLost * :wa
+let g:NERDDefaultAlign = 'left'
 
 nnoremap <F5> :GundoToggle<CR>
 
@@ -70,9 +70,12 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 let g:indentLine_enabled = 1
-let g:indentLine_char = '|'
+let g:indentLine_char = '┆'
 let g:indentLine_color_term = 239
-let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceEnabled = 0
+
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="80,".join(range(120,999),",")
 
 map <S-Right> :tabn<CR>
 map <S-Left> :tabp<CR>
