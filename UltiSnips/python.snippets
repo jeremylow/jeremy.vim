@@ -1,0 +1,29 @@
+snippet header "Shebang etc for python files"
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2017 Jeremy Low
+
+endsnippet
+
+snippet trace "import pdb; pdb.set_trace()" b
+import pdb; pdb.set_trace()
+endsnippet
+
+snippet ifmain "ifmain" b
+if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
+	${1:${VISUAL:main()}}
+endsnippet
+
+global !p
+
+SINGLE_QUOTES = "'"
+DOUBLE_QUOTES = '"'
+
+def get_quoting_style(snip):
+	style = snip.opt("g:ultisnips_python_quoting_style", "double")
+	if style == 'single':
+		return SINGLE_QUOTES
+	return DOUBLE_QUOTES
+
+endglobal
