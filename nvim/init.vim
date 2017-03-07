@@ -39,6 +39,8 @@ set textwidth=79
 set textwidth=0
 set wrapmargin=0
 
+source $HOME/coding/jeremy.vim/nvim/plug.vim
+
 nnoremap j gj
 nnoremap k gk
 
@@ -80,29 +82,18 @@ let &colorcolumn="80,".join(range(120,999),",")
 map <S-Right> :tabn<CR>
 map <S-Left> :tabp<CR>
 
-let g:airline_theme='serene'
 set laststatus=2
 
 autocmd Filetype sass setlocal ts=4 sts=4 sw=4
 
-call plug#begin('/home/jeremy/coding/jeremy.vim/nvim/plugged')
-Plug 'https://github.com/ervandew/supertab.git'
-Plug 'https://github.com/kien/ctrlp.vim.git'
-Plug 'https://github.com/sjl/gundo.vim.git', { 'on':  'GundoToggle' }
-Plug 'git@github.com:rust-lang/rust.vim.git', { 'for': 'rust' }
-Plug 'https://github.com/tpope/vim-haml.git', { 'for': 'sass' }
-Plug 'https://github.com/chase/Vim-Jinja2-Syntax.git', { 'for': ['jina', 'jinja2', 'html'] }
-Plug 'git@github.com:vim-airline/vim-airline.git'
-Plug 'git@github.com:vim-airline/vim-airline-themes.git'
-Plug 'git@github.com:Yggdroot/indentLine.git'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-scripts/closetag.vim', { 'for': ['html', 'jinja'] }
-Plug 'wakatime/vim-wakatime'
-call plug#end()
+let g:airline_theme='serene'
 
-" Plug 'https://github.com/davidhalter/jedi-vim.git'
-" Plug 'https://github.com/davidhalter/jedi-vim.git'
-" Plug 'https://github.com/SirVer/ultisnips.git'
-" Plug 'https://github.com/honza/vim-snippets.git'
-
+" I like my Sass four spaces. Fight me.
 autocmd Filetype sass setlocal ts=4 sts=4 sw=4
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+set runtimepath+=~/coding/jeremy.vim/
