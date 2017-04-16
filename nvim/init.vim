@@ -5,6 +5,8 @@ let g:plug_threads = 32
 filetype plugin on
 filetype indent on
 
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+
 let mapleader = ","
 set mouse-=a
 set wildignore+=*/node_modules/*,*/bower_components/*,*/htmlcov/*,.git
@@ -97,3 +99,6 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 set runtimepath+=~/coding/jeremy.vim/
+
+" Deoplete enabled.
+let g:deoplete#enable_at_startup = 1
