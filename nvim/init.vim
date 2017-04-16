@@ -5,6 +5,8 @@ let g:plug_threads = 32
 filetype plugin on
 filetype indent on
 
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+
 let mapleader = ","
 set mouse-=a
 set wildignore+=*/node_modules/*,*/bower_components/*,*/htmlcov/*,.git
@@ -34,11 +36,12 @@ set tabstop=4
 
 set wrap
 set textwidth=79
-set colorcolumn=85
 
 " Stops vim from inserting line breaks to wrap text
 set textwidth=0
 set wrapmargin=0
+
+source $HOME/coding/jeremy.vim/nvim/plug.vim
 
 nnoremap j gj
 nnoremap k gk
@@ -58,6 +61,7 @@ nnoremap <leader>w :w!<cr>
 
 " save on focus lost (this doesn't work)
 " au FocusLost * :wa
+let g:NERDDefaultAlign = 'left'
 
 nnoremap <F5> :GundoToggle<CR>
 
@@ -70,36 +74,31 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 let g:indentLine_enabled = 1
-let g:indentLine_char = '|'
+let g:indentLine_char = '┆'
 let g:indentLine_color_term = 239
-let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceEnabled = 0
+
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="80,".join(range(120,999),",")
 
 map <S-Right> :tabn<CR>
 map <S-Left> :tabp<CR>
 
-let g:airline_theme='serene'
 set laststatus=2
 
 autocmd Filetype sass setlocal ts=4 sts=4 sw=4
 
-call plug#begin('/home/jeremy/coding/jeremy.vim/nvim/plugged')
-Plug 'https://github.com/ervandew/supertab.git'
-Plug 'https://github.com/kien/ctrlp.vim.git'
-Plug 'https://github.com/sjl/gundo.vim.git', { 'on':  'GundoToggle' }
-Plug 'git@github.com:rust-lang/rust.vim.git', { 'for': 'rust' }
-Plug 'https://github.com/tpope/vim-haml.git', { 'for': 'sass' }
-Plug 'https://github.com/chase/Vim-Jinja2-Syntax.git', { 'for': ['jinja', 'jinja2', 'html'] }
-Plug 'git@github.com:vim-airline/vim-airline.git'
-Plug 'git@github.com:vim-airline/vim-airline-themes.git'
-Plug 'git@github.com:Yggdroot/indentLine.git'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-scripts/closetag.vim', { 'for': ['html', 'jinja'] }
-Plug 'wakatime/vim-wakatime'
-call plug#end()
+let g:airline_theme='serene'
 
-" Plug 'https://github.com/davidhalter/jedi-vim.git'
-" Plug 'https://github.com/davidhalter/jedi-vim.git'
-" Plug 'https://github.com/SirVer/ultisnips.git'
-" Plug 'https://github.com/honza/vim-snippets.git'
-
+" I like my Sass four spaces. Fight me.
 autocmd Filetype sass setlocal ts=4 sts=4 sw=4
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+set runtimepath+=~/coding/jeremy.vim/
+
+" Deoplete enabled.
+let g:deoplete#enable_at_startup = 1
