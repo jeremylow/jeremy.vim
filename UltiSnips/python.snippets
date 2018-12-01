@@ -2,12 +2,13 @@ snippet header "Shebang etc for python files"
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2017 Jeremy Low
+# Copyright (c) 2018 Jeremy Low
 
 endsnippet
 
 snippet trace "import pdb; pdb.set_trace()" b
-import pdb; pdb.set_trace()
+try: import ipdb; ipdb.set_trace()
+except ImportError: import pdb; pdb.set_trace()
 endsnippet
 
 snippet ifmain "ifmain" b
@@ -27,3 +28,16 @@ def get_quoting_style(snip):
 	return DOUBLE_QUOTES
 
 endglobal
+
+snippet docstring "inserts a numpy style stub"
+"""${1}
+
+Parameters
+----------
+
+
+Returns
+-------
+
+"""
+endsnippet

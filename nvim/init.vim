@@ -5,11 +5,15 @@ let g:plug_threads = 32
 filetype plugin on
 filetype indent on
 
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+source $HOME/coding/jeremy.vim/nvim/plug.vim
+
+set guicursor=
 
 let mapleader = ","
 set mouse-=a
 set wildignore+=*/node_modules/*,*/bower_components/*,*/htmlcov/*,.git
+
+"autocmd BufNewFile,BufRead *.py set keywordprg="python -m pydoc"
 
 set nowritebackup
 set undofile
@@ -41,7 +45,6 @@ set textwidth=79
 set textwidth=0
 set wrapmargin=0
 
-source $HOME/coding/jeremy.vim/nvim/plug.vim
 
 nnoremap j gj
 nnoremap k gk
@@ -62,6 +65,9 @@ nnoremap <leader>w :w!<cr>
 " save on focus lost (this doesn't work)
 " au FocusLost * :wa
 let g:NERDDefaultAlign = 'left'
+
+" surround with single quotes
+nnoremap <leader>qq ciw''<ESC>P
 
 nnoremap <F5> :GundoToggle<CR>
 
@@ -86,12 +92,7 @@ map <S-Left> :tabp<CR>
 
 set laststatus=2
 
-autocmd Filetype sass setlocal ts=4 sts=4 sw=4
-
 let g:airline_theme='serene'
-
-" I like my Sass four spaces. Fight me.
-autocmd Filetype sass setlocal ts=4 sts=4 sw=4
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -99,6 +100,11 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 set runtimepath+=~/coding/jeremy.vim/
+nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
 " Deoplete enabled.
+let g:deoplete#sources#jedi#python_path = '/home/jeremy/.pyenv/versions/3.5.1/envs/neovim3/bin/python'
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#enable_cache = 1
+
+"let g:completor_python_binary = '/home/jeremy/.pyenv/versions/3.5.1/envs/neovim3/bin/python'

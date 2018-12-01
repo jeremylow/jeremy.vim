@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/jeremy/coding/sites/iseverythingstilltheworst_com/iestw/posts'
 let g:netrw_dirhist_2='/home/jeremy/coding/sites/iseverythingstilltheworst_com/iestw/blog/_includes'
 let g:netrw_dirhist_3='/home/jeremy/coding/bashstrap/.vim'
 let g:netrw_dirhist_4='/home/jeremy/coding/jeremy.vim'
 let g:netrw_dirhist_5='/home/jeremy/coding/jeremy.vim/nvim'
 let g:netrw_dirhist_6='/etc/ansible'
+let g:netrw_dirhist_7='/etc'
